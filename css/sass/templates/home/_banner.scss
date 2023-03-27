@@ -1,0 +1,94 @@
+.banner {
+    @extend %full-width;
+    @extend %center;
+    height: calc(100vh);
+    // min-height: 700px;  //updated
+    @extend %flex;
+    flex-direction: column;
+    justify-content: center;
+    // justify-content: center;
+    // padding-top: 260px;
+    background: url("../../../img/build/home/banner_background_jumbled.svg") right no-repeat;  //updated
+    background-size: contain;       //updated
+
+    @include xs {
+        height: 544px;
+        min-height: 400px;
+        background-size: cover;     //updated
+        background-position: inherit;    //updated
+    }
+
+    @include sm {
+        height: 100vh;   //updated
+    }
+
+    h1 {
+        // max-width: 720px;
+
+        span {
+            color: $red;
+        }
+
+        @include xs {
+            padding: 0 50px;
+        }
+    }
+
+    h3 {
+        margin: 16px 0 32px 0;
+
+        @include xs {
+            font-family: "Objectivity-Regular";
+            margin: 0;
+            padding: 0 24px;
+            margin-top: 16px;
+        }
+    }
+
+    br {
+        @include xs {
+            display: none;
+        }
+    }
+}
+
+.homepage {
+    .awards,
+    .banner,
+    .blog,
+    .client-logos,
+    .featured-projects,
+    .services {
+        h1 {
+            @include xs {
+                font-size: 2rem;
+                line-height: 3rem;
+                letter-spacing: -0.02em;
+            }
+        }
+
+        h2 {
+            @include xs {
+                font-size: 1.5rem;
+                line-height: 2.5rem;
+                letter-spacing: -0.02em;
+            }
+        }
+
+        h3 {
+            @include xs {
+                font-size: 1rem;
+                line-height: 1.5rem;
+                letter-spacing: -0.02em;
+            }
+        }
+
+        p {
+            @include xs {
+                font-size: 1rem;
+                line-height: 1.5rem;
+                letter-spacing: -0.02em;
+            }
+        }
+    }
+}

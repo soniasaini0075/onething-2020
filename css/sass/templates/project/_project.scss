@@ -1,0 +1,221 @@
+.project-page {
+    &-head {
+        @extend %flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 562px;
+        text-align: center;
+        color: $black;
+
+        @include xs {
+            height: 328px;
+        }
+
+        span {
+            color: $red;
+        }
+
+        h3 {
+            font-family: "Objectivity-Regular";
+            padding-top: 24px;
+
+            @include xs {
+                font-size: 1rem;
+                line-height: 1.5;
+                letter-spacing: -0.02em;
+                padding-top: 8px;
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+        }
+
+        h1 {
+            @include xs {
+                font-size: 2rem;
+                line-height: 3rem;
+                letter-spacing: -0.02em;
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+        }
+    }
+
+    &-category {
+        .tab {
+            overflow: scroll;
+            @extend %flex;
+            justify-content: space-around;
+            font-family: "Objectivity-Bold";
+            line-height: 32px;
+            letter-spacing: -0.02em;
+            font-size: 1.25rem;
+
+            @include xs {
+                justify-content: flex-start;
+                padding-right: 25px;
+            }
+        }
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 17px;
+            color: $black-40;
+            margin: 0px 32px 0px 32px;
+            line-height: 32px;
+            position: relative;
+            padding-bottom: 8px;
+            @extend %flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            @include xs {
+                margin: 0 16px 0 16px;
+            }
+
+            img {
+                margin-bottom: 8px;
+
+                @include xs {
+                    width: 32px;
+                }
+            }
+
+            h3 {
+                font-size: 1.5rem;
+                line-height: 2.5rem;
+                letter-spacing: -0.02em;
+
+                @include xs {
+                    font-size: 0.875rem;
+                    line-height: 1.5rem;
+                    letter-spacing: -0.01em;
+                    text-transform: uppercase;
+                    width: max-content;
+                }
+            }
+            &:last-child {
+                img,
+                h3 {
+                    @include xs {
+                        margin-right: 25px;
+                    }
+                }
+            }
+        }
+
+        .tab button.active::after {
+            content: "";
+            width: 4px;
+            height: 4px;
+            background: $red;
+            position: absolute;
+            bottom: 0px;
+            right: 40%;
+
+            @include xs {
+                right: 50%;
+            }
+        }
+
+        .tab button.active {
+            color: $red;
+        }
+
+        .tabcontent {
+            display: none;
+            border-top: none;
+            padding: 0px 80px;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 40px;
+            margin-top: 80px;
+            margin-bottom: 80px;
+
+            @include xs {
+                padding: 0 16px;
+                margin-top: 52px;
+                margin-bottom: 110px;
+                grid-template-columns: repeat(auto, var(--gridSize));
+            }
+
+            .js-fillcolor {
+                padding: 40px 0 40px 40px;
+                background: pink;
+
+                @include xs {
+                    padding: 24px 0 24px 24px;
+                }
+            }
+
+            img {
+                height: 100%;
+                width: 100%;
+            }
+
+            h3 {
+                color: $black;
+                margin-top: 16px;
+
+                @include xs {
+                    font-size: 1.25rem;
+                    line-height: 2rem;
+                    letter-spacing: -0.02em;
+                    margin-top: 12px;
+                }
+            }
+
+            h4 {
+                color: $black-40;
+
+                @include xs {
+                    text-transform: uppercase;
+                }
+            }
+
+            .item-4 {
+                grid-column: 1 / span 2;
+                padding: 40px 40px 40px 0px;
+                @include xs {
+                    grid-column: 1 / span 1;
+                    padding: 24px 24px 24px 0;
+                }
+
+                h3,
+                h4 {
+                    text-align: right;
+                }
+            }
+            .item-10 {
+                grid-column: 2 / span 2;
+
+                @include xs {
+                    grid-column: 1 / span 1;
+                }
+            }
+        }
+    }
+
+    &-cta {
+        @extend %flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        .cta {
+            background: $black;
+            padding: 20px 28px 20px 32px;
+            min-width: 260px;
+            margin-bottom: 220px;
+
+            @include xs {
+                margin-bottom: 48px;
+            }
+        }
+    }
+}

@@ -1,0 +1,172 @@
+header {
+    height: 80px;
+    @extend %flex;
+    @extend %full-width;
+    // padding-left: 75px;
+    justify-content: flex-end;
+    @extend %pos-fixed;
+    background: transparent;
+    z-index: 9;
+
+    @include xs{
+        height: 56px;
+    }
+
+    .container-for-logo {
+        @extend %pos-absolute;
+        width: 12.5%;
+        left: 0px;
+        @extend %center;
+
+        .logo {
+            padding-top: 22px;
+            @extend %pointer;
+
+            @include xs{
+                padding-top: 14px;
+                padding-left: 24px;
+                padding-bottom: 10px;
+            }
+
+            img{
+                @include xs{
+                    width: 23px;
+                }
+            }
+        }
+
+    }
+
+
+    .nav-links {
+        width: 50%;
+
+        ul {
+            display: inline-flex;
+            list-style: none;
+            padding: 0px;
+            margin: 0px;
+            @extend %full-width;
+
+            @include xs{
+                justify-content: flex-end;
+            }
+
+            li {
+                // margin-right: 80px;
+                padding: 30px 0 28px 0;
+                height: 80px;
+                @extend %pointer;
+                width: 25%;
+                @extend %center;
+                @extend %ease;
+
+                @include xs{
+                    padding: 17px 14px 15px 20px;
+                    display: none;
+                    height: 100%;
+                    width: 100%;
+                }
+
+                &:hover {
+                    h4 {
+                        color: $red;
+                        @extend %ease;
+                    }
+                }
+
+                &:last-child {
+                    margin-right: 0px;
+                    // width: 180px;
+                    background: $black;
+                    color: $white;
+                    @extend %center;
+
+                    @include xs{
+                        display: flex;
+                        width: auto;
+                    }
+
+                    h4 {
+                        padding-left: 30px;
+                        @extend %pos-relative;
+                        display: inline;
+
+                        &:before {
+                            @extend %pos-absolute;
+                            left: 0px;
+                            top: -6px;
+                            content: "";
+                            width: 24px;
+                            height: 24px;
+                            background: url('../../../img/build/menu_icon.svg')center top no-repeat;
+
+                            @include xs{
+                                top: -2px;
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        background: $red;
+
+                        h4 {
+                            color: $white;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    &.scrolled {
+        background: $white;
+    }
+}
+
+.header-menu {
+    @extend %pos-fixed;
+    height: 100vh;
+    width: 100vw;
+    background: $black;
+    z-index: 20;
+    top: 0px;
+    left: 0px;
+    display: grid;
+    grid-template-columns: repeat(8, var(--gridSize));
+    grid-template-rows: repeat(1, 100vh);
+    display: none;
+
+    .nav-column {
+        width: var(--gridSize);
+        height: 100vh;
+        @extend %center;
+        padding: 28px 0;
+        color: $white;
+
+        h4 {
+            @extend %pointer;
+        }
+
+        &:nth-child(2),
+        &:nth-child(5) {
+            background: #232323;
+        }
+
+        &:nth-child(3) {
+            background: $red;
+        }
+
+        &:nth-child(4),
+        &:nth-child(7) {
+            background: #292929;
+        }
+
+        &:nth-child(6) {
+            background: #252525;
+        }
+
+    }
+
+}

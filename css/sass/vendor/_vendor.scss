@@ -1,0 +1,24 @@
+@import 'grid';
+@import 'slick';
+
+
+.carousel {
+  .box {
+    float: left;
+    width: 12.5%;
+    max-width: 540px;
+    height: auto;
+    margin-left: 5px;
+    margin-right: 5px;
+    text-align: center;
+    
+    img {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  .box.box-last {
+    width: 0;
+    margin: 0;
+  }
+}

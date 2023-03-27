@@ -1,0 +1,222 @@
+.services {
+    @extend %new-section;
+
+    @include xs {
+        padding-bottom: 80px;
+        position: relative;
+        margin-top: 245px;
+    }
+
+    .grid-items {
+        display: grid;
+        grid-template-columns: repeat(8, var(--gridSize));
+        // grid-auto-rows: var(--gridSize);
+        grid-template-rows: repeat(6, var(--gridSize));
+
+        .grid_for_services {
+            width: var(--gridSize);
+            height: var(--gridSize);
+            color: $white;
+            padding: 24px;
+
+            @include xs {
+                padding: 0;
+            }
+
+            &.gray {
+                background: rgba(0, 0, 0, 0.05);
+            }
+
+            &.blue {
+                background: $blue;
+
+                h3 {
+                    @include xs {
+                        font-size: 0.5rem;
+                        line-height: 0.75rem;
+                        padding: 8px 16px 13px 4px;
+                    }
+
+                    @include sm {
+                        font-size: 1rem;
+                    }
+                }
+            }
+
+            &.yellow {
+                background: $yellow;
+
+                h3 {
+                    @include xs {
+                        font-size: 0.5rem;
+                        line-height: 0.75rem;
+                        padding: 8px 16px 13px 4px;
+                    }
+
+                    @include sm {
+                        font-size: 1rem;
+                    }
+                }
+            }
+
+            &.red {
+                background: $red;
+
+                h3 {
+                    @include xs {
+                        font-size: 0.5rem;
+                        line-height: 0.75rem;
+                        padding: 8px 16px 13px 4px;
+                    }
+
+                    @include sm {
+                        font-size: 1rem;
+                    }
+                }
+            }
+
+            &.black {
+                background: $black;
+
+                h3 {
+                    @include xs {
+                        font-size: 0.5rem;
+                        line-height: 0.75rem;
+                        padding: 8px 16px 13px 4px;
+                    }
+
+                    @include sm {
+                        font-size: 1rem;
+                    }
+                }
+            }
+
+            &.row01.w6 {
+                color: $black;
+                padding: 0;
+
+                @include xs {
+                    position: absolute;
+                    top: -146px;
+                    left: 0;
+                    padding: 0 24px;
+                    width: 100%;
+                }
+
+                h3 {
+                    @include xs {
+                        font-family: "Objectivity-Regular";
+                        margin-top: 16px;
+                    }
+                }
+            }
+
+            &.row01.w6 {
+                grid-column-start: 2;
+                grid-column-end: 7;
+                width: auto;
+
+                @include sm {
+                    width: max-content;
+                }
+            }
+
+            &.row02.w2 {
+                grid-column-start: 7;
+                grid-column-end: 9;
+                grid-row-start: 2;
+                grid-row-end: 4;
+                width: auto;
+                height: auto;
+                padding: 48px 64px 0 48px;
+                background: url("../../../img/build/home/user-experience.png") center center no-repeat;
+                background-size: cover;
+
+                @include xs {
+                    padding: 12px 6px 38px 4px;
+
+                    h2 {
+                        @include xs {
+                            font-size: 0.875rem;
+                            line-height: 1.25rem;
+                        }
+                    }
+                }
+
+                @include sm {
+                    padding: 48px 64px 0 22px;
+                }
+
+                h2 {
+                    @include sm {
+                        font-size: 2rem;
+                    }
+                }
+            }
+
+            &.row03.w2 {
+                grid-column-start: 2;
+                grid-column-end: 4;
+                grid-row-start: 3;
+                grid-row-end: 5;
+                padding: 48px 64px 0 48px;
+                width: auto;
+                height: auto;
+                background: url("../../../img/build/home/interface-design.png") center center no-repeat;
+                background-size: cover;
+
+                @include xs {
+                    padding: 12px 6px 38px 4px;
+
+                    h2 {
+                        @include xs {
+                            font-size: 0.875rem;
+                            line-height: 1.25rem;
+                        }
+                    }
+                }
+
+                @include sm {
+                    font-size: 1rem;
+                    padding: 48px 64px 0 22px;
+
+                    h2 {
+                        font-size: 2rem;
+                    }
+                }
+            }
+
+            &.row04.w2 {
+                grid-column-start: 5;
+                grid-column-end: 7;
+                grid-row-start: 4;
+                grid-row-end: 6;
+                padding: 48px 64px 0 48px;
+                width: auto;
+                height: auto;
+                background: url("../../../img/build/home/user-research.png") center center no-repeat;
+                background-size: cover;
+
+                @include xs {
+                    padding: 12px 6px 38px 4px;
+
+                    h2 {
+                        @include xs {
+                            font-size: 0.875rem;
+                            line-height: 1.25rem;
+                        }
+                    }
+                }
+
+                @include sm {
+                    font-size: 1rem;
+                    padding: 48px 64px 0 22px;
+
+                    h2 {
+                        font-size: 2rem;
+                    }
+                }
+            }
+        }
+    }
+}

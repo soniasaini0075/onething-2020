@@ -1,0 +1,74 @@
+%font-black {
+    font-family: 'Objectivity-Black', sans-serif;
+    font-weight: unset;
+}
+
+%font-bold {
+    font-family: 'Objectivity-Bold', sans-serif;
+    font-weight: unset;
+}
+
+%font-extrabold {
+    font-family: 'Objectivity-ExtraBold', sans-serif;
+    font-weight: unset;
+}
+
+%font-light {
+    font-family: 'Objectivity-Light', sans-serif;
+    font-weight: unset;
+}
+
+%font-medium {
+    font-family: 'Objectivity-Medium', sans-serif;
+    font-weight: unset;
+}
+
+
+%font-regular {
+    font-family: 'Objectivity-Regular', sans-serif;
+    font-weight: unset;
+}
+
+%font-thin {
+    font-family: 'Objectivity-Thin', sans-serif;
+    font-weight: unset;
+}
+
+h1 {
+    font-size: 4rem;
+    @extend %font-bold;
+    line-height: 5rem;
+    letter-spacing: -0.16rem;
+}
+
+h2 {
+    font-size: 2.75rem;
+    @extend %font-bold;
+    line-height: 4rem;
+    letter-spacing: -0.0825rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    @extend %font-bold;
+    line-height: 2.5rem;
+    letter-spacing: -0.03rem;
+}
+
+p {
+    font-size: 1.25rem;
+    @extend %font-bold;
+    line-height: 2rem;
+    letter-spacing: -0.025rem;
+}
+
+.medium {
+    @extend %font-medium;
+}
+
+h4 {
+    font-size: 0.875rem;
+    @extend %font-bold;
+    line-height: 1.5rem;
+    letter-spacing: -0.00875rem;
+}

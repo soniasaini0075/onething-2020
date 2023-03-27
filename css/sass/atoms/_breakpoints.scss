@@ -1,0 +1,36 @@
+//large devices (larger desktops)
+$screen-lg-min: 1200px;
+
+//medium devices (tabs)
+$screen-sm-min: 768px;
+$screen-sm-max: 1199px;
+
+//extra small devices (mobiles)
+$screen-xs-max: 767px;
+
+
+//large devices
+@mixin lg {
+    @media (min-width: #{$screen-lg-min}) {
+        @content;
+    }
+}
+
+//small devices
+@mixin sm {
+    @media (min-width: #{$screen-sm-min}) and (max-width: #{$screen-sm-max}) {
+        @content;
+    }
+}
+
+// mobile devices
+@mixin xs {
+    @media (max-width: #{$screen-xs-max}) {
+        @content;
+    }
+}
+
+
+
+
+

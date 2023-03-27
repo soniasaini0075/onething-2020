@@ -1,0 +1,69 @@
+:root {
+    --gridSize: 12.5vw;
+}
+
+
+html {
+    font-size: 16px;
+}
+
+@import "breakpoints";
+@import "mixins";
+@import "reset";
+@import "colors";
+@import "fonts";
+@import "typography";
+@import "button";
+@import "forms";
+
+::selection {
+    background: $red;
+    color: $white;
+}
+
+.wrapper {
+    margin: 0 auto;
+    @extend %full-width;
+    padding: 0 12.5%;
+}
+
+.lines-behind-layout {
+    @extend %full-width;
+    @extend %pos-fixed;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    top: 0px;
+    z-index: -1;
+    display: flex;
+
+    @include xs{
+        display: none;
+    }
+
+    @include sm{
+        display: none;
+    }
+
+    .column-for-line {
+        width: 12.5%;
+        border-right: 1px solid $black;
+        opacity: 5%;
+        height: 100%;
+        display: flex;
+
+        &:last-child {
+            border: none;
+        }
+    }
+}
+a{
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+.pad-24{
+    @include xs{
+        padding: 0 24px !important;
+    }
+}

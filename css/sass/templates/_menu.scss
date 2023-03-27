@@ -1,0 +1,309 @@
+#menu-container {   //updated
+    height: 100%;
+    width: 100%;
+    @extend %pos-fixed;
+    z-index: 99;
+    background: $black;
+    @extend %flex;
+    flex-direction: row;
+    padding: 104px 0;
+    align-items: center;
+    animation: menuContainer 1s ease;
+    display: none;
+    right: 0;
+    transition: ease-in all 0.3s;
+
+    @include xs {
+        flex-direction: column-reverse;
+        padding: 0 24px;
+        justify-content: space-between;
+    }
+
+    &.open-animation{ //updated
+        display: flex;
+        opacity: 1;
+    }
+
+    &.close-animation{  //updated
+        transform: translateY(-100%);
+        transition: all 0.4s ease-out;
+
+    }
+
+    .close {
+        @extend %pos-fixed;
+        top: 0;
+        right: 0;
+        padding: 30px 0px 28px 6px;
+        color: $white;
+        @extend %flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        width: 12.5%;
+
+        @include xs {
+            padding: 17px 14px 15px 20px;
+            width: auto;
+        }
+
+        h4 {
+            margin-left: 10px;
+            line-height: 1.5rem;
+            margin-top: 2px;
+        }
+
+        #ham{
+            span{
+                width: 16px;
+                height: 2px;
+                display: block;
+                background: $white;
+                transform: rotate(45deg);
+                animation: ham 1s;
+
+                &:last-child{
+                    margin-top: -2px;
+                    transform: rotate(-45deg);
+                    animation: ham-anti 1s;
+                }
+            }
+        }
+    }
+
+    .menu-container-social {
+        @extend %flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+        padding-right: 32px;
+        padding-left: 97px;
+        border-right: 1px solid $white-20;
+        height: 100%;
+        animation: social 2s;
+
+        @include xs {
+            flex-direction: row;
+            width: 100%;
+            height: auto;
+            border: none;
+            border-top: 1px solid $white-20;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 40px 0px 56px 24px;
+        }
+        img {
+            margin-top: 45px;
+
+            @include xs {
+                width: 24px;
+                margin-right: 40px;
+                margin-top: 0;
+            }
+        }
+    }
+
+    .menu-container-links {
+        @extend %flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 0 32px;
+        width: 35%;
+        height: 100%;
+        animation: social 2s;
+
+        @include xs {
+            width: 100%;
+            padding-bottom: 40px;
+            padding-left: 24px;
+        }
+
+        div {
+            a {
+                display: block;
+                font-size: 2.75rem;
+                line-height: 4rem;
+                letter-spacing: -0.03em;
+                font-family: "Objectivity-Bold";
+
+                @include xs {
+                    font-size: 2rem;
+                    line-height: 3rem;
+                    letter-spacing: -0.02em;
+                }
+            }
+
+            &:first-child {
+                @include xs {
+                    padding-top: 80px;
+                }
+                a {
+                    margin-top: 40px;
+                    color: $white-60;
+
+                    &:first-child {
+                        margin-top: 0;
+                    }
+                }
+            }
+
+            &:last-child {
+                a {
+                    color: $red;
+                    @include xs {
+                        // margin-top: 40px;
+                    }
+                }
+            }
+        }
+    }
+
+    .menu-container-projects {
+        @extend %flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;
+        @extend %pos-relative;
+        height: 100%;
+        animation: projects 2s ease-in;
+
+        @include xs {
+            display: none;
+        }
+
+        h4 {
+            color: $white-60;
+        }
+
+        h2,
+        p {
+            color: $white-20;
+        }
+
+        &-container {
+            @extend %flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            width: calc(100vw - 662px);
+            margin-top: 8px;
+
+            @include sm {
+                width: 498px;
+            }
+
+            &-card {
+                width: 536px;
+                margin-right: 24px;
+
+                .item-1,
+                .item-2 {
+                    background: url("../../../img/build/supr_CS/cycle.svg");
+                    background-size: cover;
+                    height: 259px;
+                    width: 536px;
+                }
+
+                p {
+                    margin-top: 8px;
+                    @extend %pos-relative;
+                    margin-left: 40px;
+
+                    &::before {
+                        content: "";
+                        @extend %pos-absolute;
+                        right: calc(100% + 8px);
+                        top: 40%;
+                        width: 30px;
+                        height: 2px;
+                        background: $red;
+                    }
+                }
+            }
+
+            .arrow {
+                height: 12px;
+                @extend %pos-absolute;
+                left: calc(100vw - 800px);
+                top: -29px;
+                cursor: pointer;
+
+                @include sm {
+                    left: 63%;
+                }
+            }
+
+            .nextArrow {
+                transform: rotate(180deg);
+                left: calc(100vw - 760px);
+
+                @include sm {
+                    left: 75%;
+                }
+            }
+        }
+        .write {
+            @extend %pos-absolute;
+            bottom: 0;
+            left: 0;
+
+            h2 {
+                margin-top: 4px;
+
+                @include sm {
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+
+    .vector-1,
+    .vector-2,
+    .vector-3,
+    .vector-4 {
+        @extend %pos-absolute;
+    }
+    .vector-1 {
+        bottom: -50px;  //updated
+        left: -50px;   //updated
+        animation: vector-top 3s, floating-vector-menu 3s ease-in 3s infinite;
+
+
+        @include xs {
+            width: 55px;
+            right: 0px;
+            bottom: 0px;
+            left: auto;
+        }
+    }
+    .vector-3 {
+        right: -50px;  //updated
+        bottom: -50px;  //updated
+        width: 220px;   //updated
+        transform: rotate(-6deg);
+        animation: vector-bottom 3s, floating-vector-menu 3s ease-in 3s infinite;
+
+        @include xs {
+            display: none;
+        }
+    }
+    .vector-2 {
+        top: -60px;
+        left: 23%;
+        animation: vector-bottom 3s, floating-vector-menu 3s ease-in 3s infinite;
+
+        @include xs {
+            width: 110px;
+        }
+    }
+    .vector-4 {
+        display: none;
+
+        @include xs {
+            display: block;
+            width: 74px;
+            right: -12px;
+            top: 38%;
+        }
+    }
+}
